@@ -7,16 +7,17 @@ package frc.robot.subsystems;
 import com.ctre.phoenix6.hardware.TalonFX;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.Constants;
 
 public class Tankdrive extends SubsystemBase {
   TalonFX rightFront, rightBack, leftFront, leftBack;
 
   /** Creates a new Tankdrive. */
   public Tankdrive() {
-    rightBack = new TalonFX(0);
-    rightFront = new TalonFX(1);
-    leftBack = new TalonFX(2);
-    leftFront = new TalonFX(3);
+    rightBack = new TalonFX(Constants.DriveConstants.rightBackID);
+    rightFront = new TalonFX(Constants.DriveConstants.rightFrontID);
+    leftBack = new TalonFX(Constants.DriveConstants.leftBackID);
+    leftFront = new TalonFX(Constants.DriveConstants.leftFrontID);
   }
 
   public void setSpeed(double speed){

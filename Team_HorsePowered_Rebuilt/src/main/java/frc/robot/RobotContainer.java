@@ -17,7 +17,7 @@ public class RobotContainer {
   
   private final CommandXboxController m_driverController =
       new CommandXboxController(OperatorConstants.kDriverControllerPort);
-
+  
   private final Tankdrive tankdrive = new Tankdrive();
   private final DriveCommand driveCommand = new DriveCommand(tankdrive, m_driverController);
  
@@ -28,6 +28,7 @@ public class RobotContainer {
 
   private void configureBindings() {
     tankdrive.setDefaultCommand(driveCommand);
+    m_driverController.a().whileTrue(driveCommand);
   }
 
 

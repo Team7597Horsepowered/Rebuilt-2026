@@ -4,20 +4,22 @@
 
 package frc.robot.subsystems;
 
-import com.ctre.phoenix6.hardware.TalonFX;
+import com.revrobotics.spark.SparkMax;
+import com.revrobotics.spark.SparkLowLevel.MotorType;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 
 public class Tankdrive extends SubsystemBase {
-  TalonFX rightFront, rightBack, leftFront, leftBack;
+  SparkMax rightFront, rightBack, leftFront, leftBack;
 
   /** Creates a new Tankdrive. */
   public Tankdrive() {
-    rightBack = new TalonFX(Constants.DriveConstants.rightBackID);
-    rightFront = new TalonFX(Constants.DriveConstants.rightFrontID);
-    leftBack = new TalonFX(Constants.DriveConstants.leftBackID);
-    leftFront = new TalonFX(Constants.DriveConstants.leftFrontID);
+    rightFront = new SparkMax(Constants.DrivetrainConstants.rightFrontID,MotorType.kBrushed);
+    rightBack = new SparkMax(Constants.DrivetrainConstants.rightBackID,MotorType.kBrushed);
+    
+    leftFront = new SparkMax(Constants.DrivetrainConstants.leftFrontID,MotorType.kBrushed);
+    leftBack = new SparkMax(Constants.DrivetrainConstants.leftBackID,MotorType.kBrushed);
   }
 
   public void setSpeed(double speed){

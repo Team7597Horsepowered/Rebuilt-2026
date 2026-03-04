@@ -4,17 +4,22 @@
 
 package frc.robot;
 
+
 public final class Constants {
   public static class OperatorConstants {
     public static final int kDriverControllerPort = 0;
   }
 
-  public static class DriveConstants{
-    
-    public static final int rightBackID = 0;
+  public static class DrivetrainConstants {
     public static final int rightFrontID = 1;
-    public static final int leftBackID = 2;
+    public static final int rightBackID = 2;
+    
     public static final int leftFrontID = 3;
+    public static final int leftBackID = 4;
   }
-  
+
+  public static class ShooterConstants {
+    public static final int shooterID = 5;
+    public static final int rollerID = 6;
+  }
 }
